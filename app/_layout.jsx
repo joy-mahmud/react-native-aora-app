@@ -19,13 +19,18 @@ export default function RootLayout() {
     if(fontsLoaded){
       SplashScreen.hideAsync();
     } 
-    if(!fontsLoaded && !error) {
-      return
-    }
+   
   },[fontsLoaded,error])
+  if (!fontsLoaded) {
+    return null
+  }
+  if(!fontsLoaded && !error) {
+    return null
+  }
   return (
-    <Stack screenOptions={{headerShown:false}}>
-      <Stack.Screen name="index" />
+    <Stack>
+      <Stack.Screen  options={{headerShown:false}} name="index" />
+      <Stack.Screen  options={{headerShown:false}} name="(auth)" />
     </Stack>
   );
 }
