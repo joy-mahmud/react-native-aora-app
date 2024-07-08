@@ -1,9 +1,9 @@
-import { View, Text } from 'react-native'
+import { View, Text, StatusBar } from 'react-native'
 import React from 'react'
 
 const SignUp = () => {
   return (
-    <View>
+    <View style={{paddingTop:StatusBar.currentHeight}}>
       <Text>SignUp</Text>
     </View>
   )
